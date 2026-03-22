@@ -1,5 +1,8 @@
 package org.arth.hiringgo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,8 +14,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Component
+@Entity
 public class JobPost {
 
+    @Id
     private int postId;
     private String postProfile;
     private String postDesc;

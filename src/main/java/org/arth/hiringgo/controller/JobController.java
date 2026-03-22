@@ -34,9 +34,21 @@ public class JobController {
         return jobService.getJobPost(jobPost.getPostId());
     }
     @DeleteMapping("/jobpost/{id}")
-    public String deleteJobPost(@PathVariable("id") int postId) {
-        return jobService.deleteJobPost(postId);
+    public void deleteJobPost(@PathVariable("id") int postId) {
+        jobService.deleteJobPost(postId);
 
+    }
+    @GetMapping("/load")
+    public String loadDB() {
+        List<JobPost> saved = jobService.loadDB();
+
+        return saved.isEmpty() ? "Loading Failed!" : "Loading Successful!";
+    }
+
+    @GetMapping("/jobposts/{keyword}")
+    public List<JobPost> searchByKeyword(@PathVariable String keyword) {
+
+        return jobService.searchByKeyword(keyword);
     }
 
 
