@@ -1,8 +1,6 @@
 package org.arth.hiringgo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +16,8 @@ import java.util.List;
 public class JobPost {
 
     @Id
-    private int postId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer postId;
     private String postProfile;
     private String postDesc;
     private int reqExperience;

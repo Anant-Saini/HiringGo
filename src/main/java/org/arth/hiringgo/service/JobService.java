@@ -20,7 +20,6 @@ public class JobService {
     }
 
     public List<JobPost> getAllJobs() {
-
         return jobRepo.findAll();
     }
 
